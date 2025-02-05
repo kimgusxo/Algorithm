@@ -21,7 +21,7 @@ public class Main {
             prices.add(Integer.parseInt(st2.nextToken()));
         }
 
-        int cost = 0;
+        long cost = 0;
 
         while(distances.size() > 0 && prices.size() > 0) {
             int distance = distances.remove();
@@ -35,7 +35,7 @@ public class Main {
                     prices.remove();
                 }
             }
-            cost += distance*price;
+            cost += (long) distance*price;
         }
 
         System.out.println(cost);
