@@ -17,10 +17,10 @@ class Solution {
             if(one[i%one.length] == answers[i]) o1++;
             if(two[i%two.length] == answers[i]) o2++;
             if(three[i%three.length] == answers[i]) o3++;
-            
         }
         
         int max = Math.max(Math.max(o1,o2),o3);
+        
         if(max == o1) answer.add(1);
         if(max == o2) answer.add(2);
         if(max == o3) answer.add(3);
