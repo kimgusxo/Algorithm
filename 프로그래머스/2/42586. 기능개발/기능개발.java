@@ -1,11 +1,6 @@
 import java.util.*;
 
 class Solution {
-    
-    // 1. Deque만들고 Stack 빠질때 answer에 값 넣기
-    // 2. 100 - progress = n, n%speed == 0이면 n/speed, n/speed+1;
-    // 3. while문 두개만들어서 ㄱㄱ
-    
     public int[] solution(int[] progresses, int[] speeds) {
         List<Integer> answer = new ArrayList<>();
         Deque<Integer> queue = new ArrayDeque<>();
