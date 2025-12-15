@@ -12,7 +12,6 @@ class Solution {
         });
         
         
-        boolean first = true;
         int answer = 0;
         for(int i = row_begin; i <= row_end; i++) {
             int d = 0;
@@ -20,12 +19,8 @@ class Solution {
                 d += data[i-1][j]%i;
             }
             
-            if(!first) {
-                answer = d;
-                first = false;
-            } else {
-                answer = answer ^ d; 
-            }
+            answer = answer ^ d; 
+           
         }
         
         return answer;
