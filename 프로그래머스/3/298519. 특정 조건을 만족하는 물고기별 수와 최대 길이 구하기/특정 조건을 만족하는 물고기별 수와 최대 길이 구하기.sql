@@ -1,0 +1,23 @@
+-- 코드를 작성해주세요
+WITH t AS (SELECT
+        ID,
+        FISH_TYPE,
+        CASE 
+            WHEN LENGTH IS NULL THEN 10
+            WHEN LENGTH <= 10 THEN 10
+            ELSE LENGTH END AS LENGTH,
+        TIME
+    FROM
+        FISH_INFO)
+SELECT
+    COUNT(*) AS FISH_COUNT,
+    MAX(LENGTH) AS MAX_LENGTH,
+    FISH_TYPE
+FROM
+    t
+GROUP BY
+    FISH_TYPE
+HAVING
+    AVG(LENGTH) >= 33
+ORDER BY
+    FISH_TYPE ASC
