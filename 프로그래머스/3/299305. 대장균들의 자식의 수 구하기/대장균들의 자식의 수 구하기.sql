@@ -1,0 +1,24 @@
+-- 코드를 작성해주세요
+WITH T AS (
+    SELECT
+        PARENT_ID,
+        COUNT(PARENT_ID) AS CHILD_COUNT
+    FROM
+        ECOLI_DATA
+    WHERE
+        PARENT_ID IS NOT NULL
+    GROUP BY
+        PARENT_ID
+)
+SELECT
+    ID,
+    MAX(CASE
+            WHEN ID = T.PARENT_ID THEN T.CHILD_COUNT
+            ELSE 0 END) AS CHILD_COUNT
+FROM
+    ECOLI_DATA,
+    T
+GROUP BY
+    ID
+ORDER BY
+    ID
